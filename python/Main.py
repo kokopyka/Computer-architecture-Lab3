@@ -20,7 +20,6 @@ def send_script(filename):
 
 @get('/ServerData')
 def server_get():
-    print "I will return ", read()
     return {'info': read()}
 
 
@@ -32,7 +31,6 @@ def server_post():
         student = request.forms.get('student')
         subjects = request.forms.get('subjects')
         rates = request.forms.get('rates')
-        print "CREATED st=", student, " sub=", subjects, " rates=", rates
         create(student, subjects, rates)
 
     elif action == "UPDATE":
@@ -42,14 +40,12 @@ def server_post():
         new_student = request.forms.get('new_student')
         new_subject = request.forms.get('new_subject')
         new_mark = request.forms.get('new_mark')
-        print "UPDATING ", student, " -> ", new_student
         update(student, prev_subject, prev_mark, new_student, new_subject, new_mark)
 
     elif action == "DELETE":
         student = request.forms.get('student')
         subject = request.forms.get('subject')
         mark = request.forms.get('mark')
-        print "DELETING ", student, " subject=", subject, " mark=", mark
         delete(student, subject, mark)
 
 
