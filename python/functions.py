@@ -8,9 +8,7 @@ def create(student, subjects, rates):
 
     r.rpush(student, subjects)
     r.rpush(student, rates)
-
-    print "I've created"
-
+    
 
 def update(student, prev_subject, prev_mark, new_student, new_subject, new_mark):
     r = redis.Redis('localhost')
@@ -31,8 +29,6 @@ def update(student, prev_subject, prev_mark, new_student, new_subject, new_mark)
     for el in elements:
         r.rpush(student, el)
 
-    print "I've updated "
-
 
 def delete(student, subject, mark):
     r = redis.Redis('localhost')
@@ -49,7 +45,6 @@ def delete(student, subject, mark):
 
     for el in elements:
         r.rpush(student, el)
-    print "I've deleted"
 
 
 def read():
