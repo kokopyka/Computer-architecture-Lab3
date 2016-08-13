@@ -1,3 +1,2 @@
 # Computer-architecture-Lab3
-Python, Javascript, HTML, CSS
-Bottle, Redis, REST, CRUD
+Python-JS-HTML-CSS. Bottle, Redis, REST, CRUD
